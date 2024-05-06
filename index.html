@@ -9,6 +9,44 @@
   <link rel="shortcut icon" type="image/png" href="assets/icons/logo.svg" />
   <meta property="og:image" content="assets/icons/logo.svg" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
+  <style>
+    .flip-box {
+      background-color: transparent;
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+    }
+
+    /* This container is needed to position the front and back side */
+    .flip-box-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    /* Do an horizontal flip when you move the mouse over the flip box container */
+    .flip-box:hover .flip-box-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* Position the front and back side */
+    .flip-box-front,
+    .flip-box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      /* Safari */
+      backface-visibility: hidden;
+    }
+
+    .flip-box-back {
+      transform: rotateY(180deg);
+    }
+  </style>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/> -->
 </head>
 
@@ -22,8 +60,18 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <!-- <a href="./index.html" class="text-nowrap logo-img"> -->
-            <!-- <img src="assets/images/logos/dark-logo.svg" width="180" alt="" /> -->
-            <img src="assets/icons/logo.svg" width="180" alt="" />
+          <!-- <img src="assets/images/logos/dark-logo.svg" width="180" alt="" /> -->
+          <div class="flip-box">
+            <div class="flip-box-inner">
+              <div class="flip-box-front">
+                <img src="assets/icons/logo.svg" style="width:180px;">
+              </div>
+              <div class="flip-box-back">
+                <img src="assets/icons/qrcode.svg" style="width:180px;">
+              </div>
+            </div>
+          </div>
+          <!-- <img src="assets/icons/logo.svg" width="180" alt="" /> -->
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-8"></i>
@@ -41,7 +89,8 @@
                 <!-- <span>
                   <i class="fi fi-tr"></i>
                 </span> -->
-                <span class="hide-menu"><img src="assets/icons/tr.svg" style="width: 24px; height: 16px;margin-right: 10px;"/>Türkiye</span>
+                <span class="hide-menu"><img src="assets/icons/tr.svg"
+                    style="width: 24px; height: 16px;margin-right: 10px;" />Türkiye</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -49,7 +98,8 @@
                 <!-- <span>
                   <i class="fi fi-az"></i>
                 </span> -->
-                <span class="hide-menu"><img src="assets/icons/az.svg" style="width: 24px; height: 16px;margin-right: 10px;"/>Azerbaycan</span>
+                <span class="hide-menu"><img src="assets/icons/az.svg"
+                    style="width: 24px; height: 16px;margin-right: 10px;" />Azerbaycan</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -57,7 +107,8 @@
                 <!-- <span>
                   <i class="fi fi-sy"></i>
                 </span> -->
-                <span class="hide-menu"><img src="assets/icons/sy.svg" style="width: 24px; height: 16px;margin-right: 10px;"/>Suriye</span>
+                <span class="hide-menu"><img src="assets/icons/sy.svg"
+                    style="width: 24px; height: 16px;margin-right: 10px;" />Suriye</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -65,7 +116,8 @@
                 <!-- <span>
                   <i class="fi fi-iq"></i>
                 </span> -->
-                <span class="hide-menu"><img src="assets/icons/iq.svg" style="width: 24px; height: 16px;margin-right: 10px;"/>Irak</span>
+                <span class="hide-menu"><img src="assets/icons/iq.svg"
+                    style="width: 24px; height: 16px;margin-right: 10px;" />Irak</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -73,7 +125,8 @@
                 <!-- <span>
                   <i class="fi fi-ge"></i>
                 </span> -->
-                <span class="hide-menu"><img src="assets/icons/ge.svg" style="width: 24px; height: 16px;margin-right: 10px;"/>Gürcistan</span>
+                <span class="hide-menu"><img src="assets/icons/ge.svg"
+                    style="width: 24px; height: 16px;margin-right: 10px;" />Gürcistan</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -81,7 +134,8 @@
                 <!-- <span>
                   <i class="fi fi-kz"></i>
                 </span> -->
-                <span class="hide-menu"><img src="assets/icons/kz.svg" style="width: 24px; height: 16px;margin-right: 10px;"/>Kazakistan</span>
+                <span class="hide-menu"><img src="assets/icons/kz.svg"
+                    style="width: 24px; height: 16px;margin-right: 10px;" />Kazakistan</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -89,7 +143,8 @@
                 <!-- <span>
                   <i class="fi fi-uz"></i>
                 </span> -->
-                <span class="hide-menu"><img src="assets/icons/uz.svg" style="width: 24px; height: 16px;margin-right: 10px;"/>Özbekistan</span>
+                <span class="hide-menu"><img src="assets/icons/uz.svg"
+                    style="width: 24px; height: 16px;margin-right: 10px;" />Özbekistan</span>
               </a>
             </li>
             <li class="sidebar-item">
@@ -97,7 +152,8 @@
                 <!-- <span>
                   <i class="fi fi-kg"></i>
                 </span> -->
-                <span class="hide-menu"><img src="assets/icons/kg.svg" style="width: 24px; height: 16px;margin-right: 10px;"/>Kırgızistan</span>
+                <span class="hide-menu"><img src="assets/icons/kg.svg"
+                    style="width: 24px; height: 16px;margin-right: 10px;" />Kırgızistan</span>
               </a>
             </li>
           </ul>
@@ -161,7 +217,7 @@
     var main_language_anthem = document.getElementById('main-language-anthem');
     var player = document.getElementById("player");
     function choose_country(country_code) {
-      switch(country_code) {
+      switch (country_code) {
         case 'TR':
           turkish_language_anthem.innerText = "Korkma, sönmez bu şafaklarda yüzen al sancak;\nSönmeden yurdumun üstünde tüten en son ocak.\nO benim milletimin yıldızıdır, parlayacak;\nO benimdir, o benim milletimindir ancak.\n\nÇatma, kurban olayım çehreni ey nazlı hilâl!\nKahraman ırkıma bir gül… ne bu şiddet bu celâl?\nSana olmaz dökülen kanlarımız sonra helâl,\nHakkıdır, Hakk’a tapan, milletimin istiklâl.\n\nBen ezelden beridir hür yaşadım, hür yaşarım.\nHangi çılgın bana zincir vuracakmış? Şaşarım!\nKükremiş sel gibiyim; bendimi çiğner, aşarım;\nYırtarım dağları, enginlere sığmam, taşarım.\n\nGarb’ın âfâkını sarmışsa çelik zırhlı duvar;\nBenim iman dolu göğsüm gibi serhaddim var.\nUlusun, korkma! Nasıl böyle bir îmânı boğar,\n\"Medeniyet!\" dediğin tek dişi kalmış canavar?\n\nArkadaş! Yurduma alçakları uğratma sakın;\nSiper et gövdeni, dursun bu hayâsızca akın.\nDoğacaktır sana va’dettiği günler Hakk’ın…\nKim bilir, belki yarın… belki yarından da yakın.\n\nBastığın yerleri \"toprak!\" diyerek geçme, tanı!\nDüşün altındaki binlerce kefensiz yatanı.\nSen şehîd oğlusun, incitme, yazıktır atanı;\nVerme, dünyâları alsan da, bu cennet vatanı.\n\nKim bu cennet vatanın uğruna olmaz ki fedâ?\nŞühedâ fışkıracak, toprağı sıksan şühedâ!\nCânı, cânânı, bütün varımı alsın da Hudâ,\nEtmesin tek vatanımdan beni dünyâda cüdâ.\n\nRuhumun senden, İlâhî, şudur ancak emeli:\nDeğmesin ma’bedimin göğsüne nâ-mahrem eli!\nBu ezanlar-ki şehâdetleri dînin temeli\nEbedî yurdumun üstünde benim inlemeli\nO zaman vecd ile bin secde eder –varsa- taşım;\n\nHer cerîhamdan, İlâhî, boşanıp kanlı yaşım,\nFışkırır rûh-i mücerred gibi yerden na’şım;\nO zaman yükselerek Arş’a değer, belki başım.\nDalgalan sen de şafaklar gibi ey şanlı hilâl;\n\nOlsun artık dökülen kanlarımın hepsi helâl.\nEbediyen sana yok, ırkıma yok izmihlâl:\nHakkıdır, hür yaşamış bayrağımın hürriyet;\nHakkıdır, Hakk’a tapan milletimin istiklâl!";
           main_language_anthem.innerText = "Korkma, sönmez bu şafaklarda yüzen al sancak;\nSönmeden yurdumun üstünde tüten en son ocak.\nO benim milletimin yıldızıdır, parlayacak;\nO benimdir, o benim milletimindir ancak.\n\nÇatma, kurban olayım çehreni ey nazlı hilâl!\nKahraman ırkıma bir gül… ne bu şiddet bu celâl?\nSana olmaz dökülen kanlarımız sonra helâl,\nHakkıdır, Hakk’a tapan, milletimin istiklâl.\n\nBen ezelden beridir hür yaşadım, hür yaşarım.\nHangi çılgın bana zincir vuracakmış? Şaşarım!\nKükremiş sel gibiyim; bendimi çiğner, aşarım;\nYırtarım dağları, enginlere sığmam, taşarım.\n\nGarb’ın âfâkını sarmışsa çelik zırhlı duvar;\nBenim iman dolu göğsüm gibi serhaddim var.\nUlusun, korkma! Nasıl böyle bir îmânı boğar,\n\"Medeniyet!\" dediğin tek dişi kalmış canavar?\n\nArkadaş! Yurduma alçakları uğratma sakın;\nSiper et gövdeni, dursun bu hayâsızca akın.\nDoğacaktır sana va’dettiği günler Hakk’ın…\nKim bilir, belki yarın… belki yarından da yakın.\n\nBastığın yerleri \"toprak!\" diyerek geçme, tanı!\nDüşün altındaki binlerce kefensiz yatanı.\nSen şehîd oğlusun, incitme, yazıktır atanı;\nVerme, dünyâları alsan da, bu cennet vatanı.\n\nKim bu cennet vatanın uğruna olmaz ki fedâ?\nŞühedâ fışkıracak, toprağı sıksan şühedâ!\nCânı, cânânı, bütün varımı alsın da Hudâ,\nEtmesin tek vatanımdan beni dünyâda cüdâ.\n\nRuhumun senden, İlâhî, şudur ancak emeli:\nDeğmesin ma’bedimin göğsüne nâ-mahrem eli!\nBu ezanlar-ki şehâdetleri dînin temeli\nEbedî yurdumun üstünde benim inlemeli\nO zaman vecd ile bin secde eder –varsa- taşım;\n\nHer cerîhamdan, İlâhî, boşanıp kanlı yaşım,\nFışkırır rûh-i mücerred gibi yerden na’şım;\nO zaman yükselerek Arş’a değer, belki başım.\nDalgalan sen de şafaklar gibi ey şanlı hilâl;\n\nOlsun artık dökülen kanlarımın hepsi helâl.\nEbediyen sana yok, ırkıma yok izmihlâl:\nHakkıdır, hür yaşamış bayrağımın hürriyet;\nHakkıdır, Hakk’a tapan milletimin istiklâl!";
